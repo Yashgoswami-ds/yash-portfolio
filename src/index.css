@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+
+:root {
+
+  --background: 250 250 250;
+  --foreground: 24 24 27;
+
+  --muted: 113 113 122;
+
+  --surface: 255 255 255;
+
+  --border: 228 228 231;
+
+}
+
+.dark {
+
+  --background: 9 9 11;
+  --foreground: 250 250 250;
+
+  --muted: 161 161 170;
+
+  --surface: 24 24 27;
+
+  --border: 63 63 70;
+
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  background:
+  rgb(var(--background));
+
+  color:
+  rgb(var(--foreground));
+
+  transition:
+  background 0.3s ease,
+  color 0.3s ease;
+
+}
+
+
+* {
+
+  border-color:
+  rgb(var(--border));
+
+}
+/* Disable text selection */
+
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+
+/* Keep inputs/textareas selectable */
+
+input,
+textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}

@@ -1,0 +1,47 @@
+# Core
+react
+react-dom
+typescript
+vite
+
+# Routing
+react-router-dom
+
+# Styling
+tailwindcss
+@tailwindcss/vite
+tailwind-merge
+clsx
+class-variance-authority
+
+# Animation
+framer-motion
+gsap
+@gsap/react
+lenis
+
+# 3D
+three
+@react-three/fiber
+@react-three/drei
+
+# UI Icons & Feedback
+lucide-react
+react-icons
+react-hot-toast
+
+# Forms & Validation
+react-hook-form
+zod
+@hookform/resolvers
+
+# Theme
+next-themes
+
+# SEO
+react-helmet-async
+
+# Utilities
+react-countup
+react-intersection-observer
+date-fns

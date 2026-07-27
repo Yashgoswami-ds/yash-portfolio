@@ -1,75 +1,187 @@
-# React + TypeScript + Vite
+# Yash Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Demo
 
-Currently, two official plugins are available:
+Visit the live portfolio:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://yashdigitalprofile.vercel.app/
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## About The Project
 
-## Expanding the ESLint configuration
+Yash Portfolio is my personal developer portfolio website built to showcase my skills, projects, experience, and professional journey.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project is designed with a modern interface, smooth animations, responsive layouts, and a scalable architecture that can be extended with backend services.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This repository contains my personal work, design, and implementation. The code is publicly available for viewing and learning purposes only.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Modern responsive design
+- Mobile friendly interface
+- Dark and light theme support
+- Smooth animations and transitions
+- Component based architecture
+- Dynamic navigation
+- Projects showcase
+- Skills and experience sections
+- Contact form interface
+- Social media integration
+- Backend ready API service structure
 
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Frontend
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Router
+- Lucide React
+- React Icons
+
+
+### Backend (Planned)
+
+- Java
+- Spring Boot
+- REST API
+- Database Integration
+
+
+## Project Structure
 
 ```
+src
+|
+├── assets
+|   └── Images and static files
+|
+├── components
+|   └── layout
+|       ├── Navbar
+|       └── MainLayout
+|
+├── sections
+|   ├── Hero
+|   ├── About
+|   ├── Skills
+|   ├── Projects
+|   ├── Experience
+|   ├── Achievements
+|   ├── Contact
+|   └── Footer
+|
+├── services
+|   └── API communication layer
+|
+├── providers
+|   └── Theme management
+|
+└── styles
+    └── Global styling
+```
+
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Yashgoswami-ds/yash-portfolio.git
+```
+
+Move into project directory:
+
+```bash
+cd yash-portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+
+The application will run at:
+
+```
+http://localhost:5173
+```
+
+
+## Backend Integration
+
+The frontend is prepared for backend connectivity through a separate service layer.
+
+Current API structure:
+
+```
+POST /api/contact
+```
+
+
+Future architecture:
+
+```
+React + TypeScript
+
+        |
+
+        |
+
+Spring Boot REST API
+
+        |
+
+        |
+
+Database / Email Service
+```
+
+
+## Future Improvements
+
+- Spring Boot backend integration
+- Contact message database storage
+- Email notification system
+- Advanced authentication
+- More projects and achievements
+
+
+## Author
+
+Yash Goswami
+
+Backend Engineer | Java | AI Enthusiast
+
+
+GitHub:
+
+https://github.com/Yashgoswami-ds
+
+
+LinkedIn:
+
+https://in.linkedin.com/in/yash-goswami-99374a278
+
+
+## License
+
+This is a personal portfolio project.
+
+All rights reserved.
+
+You may view this repository for learning and reference purposes only.
+
+You are not allowed to copy, modify, distribute, publish, or use any part of this project without my permission.

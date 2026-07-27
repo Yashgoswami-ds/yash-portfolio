@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/contact";
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 export interface ContactData {
@@ -13,7 +13,7 @@ export interface ContactData {
 
 
 
-export const sendContactMessage = async(
+export const sendContactMessage = async (
   data: ContactData
 ) => {
 
@@ -38,7 +38,9 @@ export const sendContactMessage = async(
 
     const errorText = await response.text();
 
-    throw new Error(errorText || "Failed to send message");
+    throw new Error(
+      errorText || "Failed to send message"
+    );
 
   }
 

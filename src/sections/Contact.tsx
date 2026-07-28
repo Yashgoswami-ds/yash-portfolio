@@ -11,6 +11,8 @@ import {
 
 import { useState } from "react";
 
+import emailjs from "@emailjs/browser";
+
 import { sendContactMessage } from "../services/contactService";
 
 import contactBg from "../assets/contact.png";
@@ -46,7 +48,8 @@ setFormData({
 
 
 
-const handleSubmit = async(
+
+const handleSubmit = async (
 e:React.FormEvent
 )=>{
 
@@ -56,19 +59,75 @@ e.preventDefault();
 try{
 
 
+// Save in backend database
+
 await sendContactMessage(formData);
+
+
+
+
+// Send mail to Yash
+
+await emailjs.send(
+
+"service_nptb9bj",
+
+"template_4slsrob",
+
+{
+
+name:formData.name,
+
+email:formData.email,
+
+message:formData.message
+
+},
+
+"PN118aO2oMKS5O41i"
+);
+
+
+
+
+
+// Auto reply to client
+
+await emailjs.send(
+
+"service_nptb9bj",
+
+"template_dud7v7d",
+
+{
+
+name:formData.name,
+
+email:formData.email
+
+},
+
+"PN118aO2oMKS5O41i"
+);
+
+
+
 
 
 alert("Message sent successfully");
 
 
+
 setFormData({
 
 name:"",
+
 email:"",
+
 message:""
 
 });
+
 
 
 }
@@ -83,6 +142,8 @@ alert("Failed to send message");
 
 
 };
+
+
 
 
 
@@ -115,17 +176,25 @@ src={contactBg}
 alt="contact"
 
 initial={{
+
 opacity:0,
+
 x:-80
+
 }}
 
 animate={{
+
 opacity:1,
+
 x:0
+
 }}
 
 transition={{
+
 duration:1
+
 }}
 
 className="
@@ -237,21 +306,28 @@ justify-end
 >
 
 
-
 <motion.div
 
 initial={{
+
 opacity:0,
+
 y:40
+
 }}
 
 whileInView={{
+
 opacity:1,
+
 y:0
+
 }}
 
 viewport={{
+
 once:true
+
 }}
 
 className="
@@ -268,22 +344,12 @@ lg:text-right
 >
 
 
-
-
-<p
-
-className="
+<p className="
 text-sm
-
 uppercase
-
 tracking-[0.45em]
-
 text-blue-500
-
-"
-
->
+">
 
 Contact
 
@@ -291,50 +357,27 @@ Contact
 
 
 
-
-
-<h2
-
-className="
+<h2 className="
 mt-6
-
 text-5xl
-
 font-black
-
 leading-tight
-
 text-[rgb(var(--foreground))]
-
 md:text-7xl
-
-"
-
->
+">
 
 Let's Build
 
 
-<span
-
-className="
+<span className="
 block
-
 bg-gradient-to-r
-
 from-blue-500
-
 via-cyan-400
-
 to-purple-500
-
 bg-clip-text
-
 text-transparent
-
-"
-
->
+">
 
 Something Great
 
@@ -342,11 +385,6 @@ Something Great
 
 
 </h2>
-
-
-
-
-
 <p
 
 className="
@@ -391,6 +429,7 @@ lg:justify-end
 "
 
 >
+
 
 
 <a
@@ -443,9 +482,11 @@ hover:text-blue-500
 
 
 
+
 <a
 
 href="https://in.linkedin.com/in/yash-goswami-99374a278"
+
 target="_blank"
 
 rel="noreferrer"
@@ -490,8 +531,16 @@ hover:text-blue-500
 </a>
 
 
+
 </div>
+
+
+
+
+
+
 {/* FORM */}
+
 
 
 <motion.form
@@ -499,61 +548,78 @@ hover:text-blue-500
 onSubmit={handleSubmit}
 
 initial={{
+
 opacity:0,
+
 x:50
+
 }}
 
 whileInView={{
+
 opacity:1,
+
 x:0
+
 }}
 
 viewport={{
+
 once:true
+
 }}
 
 className="
 mt-15
+
 max-w-md
+
 ml-auto
+
 rounded-[28px]
+
 border
+
 border-[rgb(var(--border)/0.2)]
+
 bg-[rgb(var(--surface)/0.55)]
+
 p-6
+
 text-left
+
 backdrop-blur-2xl
+
 shadow-[0_25px_60px_rgba(0,0,0,.25)]
+
 "
 
 >
 
 
 <h3 className="text-3xl font-bold text-blue-500">
-  Send{" "}
-  <span className="text-[rgb(var(--foreground))]">
-    Message
-  </span>
+
+Send{" "}
+
+<span className="text-[rgb(var(--foreground))]">
+
+Message
+
+</span>
+
 </h3>
 
 
 
 
-<p
-
-className="
+<p className="
 mt-2
-
- text-blue-500
-
-"
-
->
+text-blue-500
+">
 
 Let's discuss your next idea.
 
 </p>
-
 
 
 
@@ -570,8 +636,6 @@ space-y-5
 "
 
 >
-
-
 
 
 
@@ -623,8 +687,6 @@ focus:ring-blue-500/20
 
 
 
-
-
 <input
 
 name="email"
@@ -669,9 +731,6 @@ focus:ring-blue-500/20
 "
 
 />
-
-
-
 
 
 
@@ -731,9 +790,6 @@ focus:ring-blue-500/20
 
 
 
-
-
-
 <button
 
 type="submit"
@@ -775,7 +831,6 @@ hover:shadow-[0_0_40px_rgba(59,130,246,.45)]
 
 >
 
-
 Send Message
 
 
@@ -800,9 +855,6 @@ group-hover:translate-x-1
 
 
 
-
-
-
 </div>
 
 
@@ -816,16 +868,14 @@ group-hover:translate-x-1
 
 
 
-
-
 </motion.div>
 
 
 
 
 
-
 </div>
+
 
 
 

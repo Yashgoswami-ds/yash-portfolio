@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import resumePDF from "../assets/Yash_Goswami_Resume.pdf";
+
 import {
   ArrowRight,
   Download,
@@ -23,7 +25,6 @@ const Hero = () => {
   ];
 
 
-
   return (
 
     <section
@@ -33,12 +34,14 @@ const Hero = () => {
       min-h-screen
       overflow-hidden
       bg-[rgb(var(--background))]
-      px-6
+      px-4
+      sm:px-6
       pt-24
       "
     >
 
 
+      {/* Hero Image */}
 
       <motion.img
 
@@ -64,18 +67,19 @@ const Hero = () => {
         absolute
         bottom-0
         left-1/2
-        h-[55vh]
+        h-[35vh]
         w-auto
         -translate-x-1/2
         object-contain
 
-        sm:h-[65vh]
+        sm:h-[50vh]
+        md:h-[60vh]
 
         lg:left-0
         lg:h-[85vh]
         lg:translate-x-0
 
-        opacity-70
+        opacity-40
         dark:opacity-100
         "
 
@@ -84,20 +88,28 @@ const Hero = () => {
 
 
 
+      {/* Background Glow */}
 
       <div
         className="
         absolute
-        right-20
-        top-32
-        h-[400px]
-        w-[400px]
+        right-0
+        top-20
+        h-[250px]
+        w-[250px]
         rounded-full
         bg-blue-500/20
-        blur-[150px]
+        blur-[120px]
+
+        sm:h-[350px]
+        sm:w-[350px]
+
+        lg:right-20
+        lg:top-32
+        lg:h-[400px]
+        lg:w-[400px]
         "
       />
-
 
 
 
@@ -110,458 +122,418 @@ const Hero = () => {
         min-h-screen
         max-w-7xl
         items-center
-        justify-end
+        justify-center
+
+        lg:justify-end
         "
       >
 
 
 
+      <motion.div
+
+        initial={{
+          opacity:0,
+          y:40
+        }}
+
+        animate={{
+          opacity:1,
+          y:0
+        }}
+
+        transition={{
+          duration:.8
+        }}
+
+        className="
+        relative
+        z-10
+        max-w-3xl
+        text-center
+        lg:text-right
+        "
+
+      >
 
 
-        <motion.div
 
-          initial={{
-            opacity:0,
-            y:40
-          }}
 
-          animate={{
-            opacity:1,
-            y:0
-          }}
+      {/* Badge */}
 
-          transition={{
-            duration:.8
-          }}
+      <div
+        className="
+        inline-flex
+        items-center
+        gap-2
+        rounded-full
+        border
+        border-blue-500/30
+        bg-blue-500/10
+        px-4
+        py-2
+        text-sm
+        text-blue-500
+        "
+      >
 
+        <Sparkles size={16}/>
+
+        Backend Engineer • Java • AI
+
+      </div>
+
+
+
+
+
+      {/* Heading */}
+
+      <h1
+
+      className="
+      mt-6
+      text-4xl
+      sm:text-5xl
+      md:text-6xl
+      lg:text-7xl
+      font-black
+      leading-tight
+      tracking-tight
+      text-[rgb(var(--foreground))]
+      "
+
+      >
+
+        Building
+
+
+        <span
           className="
-          relative
-          z-10
-          max-w-3xl
-          text-center
-          lg:text-right
+          block
+          bg-gradient-to-r
+          from-blue-500
+          via-cyan-400
+          to-purple-500
+          bg-clip-text
+          text-transparent
+          animate-pulse
           "
-
         >
 
+          Scalable Systems
+
+        </span>
 
 
 
-          <div
-            className="
-            inline-flex
-            items-center
-            gap-2
-            rounded-full
-            border
-            border-blue-500/30
-            bg-blue-500/10
-            px-4
-            py-2
-            text-sm
-            text-blue-500
-            "
-          >
-
-            <Sparkles size={16}/>
-
-            Backend Engineer • Java • AI
-
-          </div>
-
-
-
-
-
-
-
-          <h1
-
+        <span
           className="
-          mt-6
-          text-5xl
-          font-black
-          leading-[1.05]
-          tracking-tight
+          block
+          text-2xl
+          sm:text-3xl
+          md:text-5xl
           text-[rgb(var(--foreground))]
-
-          md:text-7xl
           "
+        >
 
-          >
+          with Java & AI
 
-
-            Building
-
-
-            <span
-              className="
-              block
-              bg-gradient-to-r
-              from-blue-500
-              via-cyan-400
-              to-purple-500
-              bg-clip-text
-              text-transparent
-              animate-pulse
-              "
-            >
-
-              Scalable Systems
-
-            </span>
+        </span>
 
 
-
-            <span
-              className="
-              block
-              text-3xl
-              md:text-5xl
-              text-[rgb(var(--foreground))]
-              "
-            >
-
-              with Java & AI
-
-            </span>
-
-
-          </h1>
+      </h1>
 
 
 
 
 
 
+      {/* Description */}
 
-          <p
+      <p
+
+      className="
+      mt-7
+      mx-auto
+      max-w-xl
+      text-base
+      sm:text-lg
+      leading-relaxed
+      text-[rgb(var(--muted))]
+      lg:ml-auto
+      "
+
+      >
+
+        I design and build backend solutions
+        that are reliable, scalable and
+        production ready.
+
+
+        <span className="block mt-2">
+
+          Exploring Java, Spring Boot,
+          distributed systems and AI-powered applications.
+
+        </span>
+
+      </p>
+
+
+
+
+
+
+      {/* Buttons */}
+
+      <div
+        className="
+        mt-10
+        flex
+        flex-wrap
+        justify-center
+        gap-4
+        lg:justify-end
+        "
+      >
+
+
+        <a
+          href="#projects"
 
           className="
-          mt-7
-          ml-auto
-          max-w-xl
-          text-lg
-          leading-relaxed
-          text-[rgb(var(--muted))]
-          "
-
-          >
-
-            I design and build backend solutions
-            that are reliable, scalable and
-            production ready.
-
-            <span className="block mt-2">
-
-              Exploring Java, Spring Boot,
-              distributed systems and AI-powered applications.
-
-            </span>
-
-          </p>
-
-
-
-
-
-
-
-
-
-          <div
-            className="
-            mt-10
-            flex
-            flex-wrap
-            justify-center
-            gap-4
-
-            lg:justify-end
-            "
-          >
-
-
-            <a
-              href="#projects"
-
-              className="
-              group
-              flex
-              items-center
-              gap-2
-              rounded-full
-              bg-blue-500
-              px-8
-              py-3.5
-              font-medium
-              text-white
-              shadow-lg
-              shadow-blue-500/30
-              transition
-
-              hover:-translate-y-1
-              hover:bg-blue-600
-              "
-            >
-
-              Explore Work
-
-              <ArrowRight
-              size={18}
-              className="
-              transition
-              group-hover:translate-x-1
-              "
-              />
-
-            </a>
-
-
-
-
-
-            <a
-
-            href="#contact"
-
-            className="
-            rounded-full
-            border
-            border-black/20
-            px-8
-            py-3.5
-            text-[rgb(var(--foreground))]
-            transition
-
-            hover:border-blue-500
-
-            dark:border-white/20
-            "
-
-            >
-
-              Contact Me
-
-            </a>
-
-
-
-          </div>
-
-
-
-
-
-
-
-
-
-         {/* Social Links + Resume */}
-
-<div
-
-className="
-mt-8
-flex
-justify-center
-gap-4
-
-lg:justify-end
-"
-
->
-
-
-{/* Github */}
-
-<a
-
-href="https://github.com/Yashgoswami-ds"
-
-target="_blank"
-
-rel="noopener noreferrer"
-
-
-className="
-rounded-full
-border
-border-black/20
-p-3
-
-text-[rgb(var(--muted))]
-
-transition
-
-hover:-translate-y-1
-
-hover:border-blue-500
-
-hover:text-blue-500
-
-
-dark:border-white/20
-
-"
-
->
-
-<FaGithub size={20}/>
-
-</a>
-
-
-
-
-
-{/* LinkedIn */}
-
-<a
-
-href="https://in.linkedin.com/in/yash-goswami-99374a278"
-
-target="_blank"
-
-rel="noopener noreferrer"
-
-
-className="
-rounded-full
-border
-border-black/20
-p-3
-
-text-[rgb(var(--muted))]
-
-transition
-
-hover:-translate-y-1
-
-hover:border-blue-500
-
-hover:text-blue-500
-
-
-dark:border-white/20
-
-"
-
->
-
-<FaLinkedin size={20}/>
-
-</a>
-
-
-
-
-
-
-
-{/* Resume Button */}
-
-<button
-
-className="
-flex
-items-center
-gap-2
-
-rounded-full
-
-border
-
-border-black/20
-
-px-5
-
-text-[rgb(var(--foreground))]
-
-transition
-
-hover:-translate-y-1
-
-hover:border-blue-500
-
-
-dark:border-white/20
-
-"
-
->
-
-<Download size={18}/>
-
-Resume
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-          <div
-
-          className="
-          mt-12
+          group
           flex
-          justify-center
-          gap-3
+          items-center
+          gap-2
+          rounded-full
+          bg-blue-500
+          px-8
+          py-3.5
+          font-medium
+          text-white
+          shadow-lg
+          shadow-blue-500/30
+          transition
+          hover:-translate-y-1
+          hover:bg-blue-600
+          "
+        >
 
-          lg:justify-end
+          Explore Work
+
+          <ArrowRight
+            size={18}
+            className="transition group-hover:translate-x-1"
+          />
+
+        </a>
+
+
+
+
+
+        <a
+          href="#contact"
+
+          className="
+          rounded-full
+          border
+          border-black/20
+          px-8
+          py-3.5
+          text-[rgb(var(--foreground))]
+          transition
+          hover:border-blue-500
+          dark:border-white/20
+          "
+        >
+
+          Contact Me
+
+        </a>
+
+
+      </div>
+
+
+
+
+
+
+
+      {/* Social + Resume */}
+
+      <div
+
+      className="
+      mt-8
+      flex
+      flex-wrap
+      justify-center
+      gap-3
+
+      lg:justify-end
+      "
+
+      >
+
+
+      <a
+
+      href="https://github.com/Yashgoswami-ds"
+
+      target="_blank"
+
+      rel="noopener noreferrer"
+
+      className="
+      rounded-full
+      border
+      border-black/20
+      p-3
+      text-[rgb(var(--muted))]
+      transition
+      hover:-translate-y-1
+      hover:border-blue-500
+      hover:text-blue-500
+      dark:border-white/20
+      "
+
+      >
+
+      <FaGithub size={20}/>
+
+      </a>
+
+
+
+
+      <a
+
+      href="https://in.linkedin.com/in/yash-goswami-99374a278"
+
+      target="_blank"
+
+      rel="noopener noreferrer"
+
+      className="
+      rounded-full
+      border
+      border-black/20
+      p-3
+      text-[rgb(var(--muted))]
+      transition
+      hover:-translate-y-1
+      hover:border-blue-500
+      hover:text-blue-500
+      dark:border-white/20
+      "
+
+      >
+
+      <FaLinkedin size={20}/>
+
+      </a>
+
+
+
+
+      <a
+
+      href={resumePDF}
+
+      download="Yash_Goswami_Resume.pdf"
+
+      className="
+      flex
+      items-center
+      gap-2
+      rounded-full
+      border
+      border-black/20
+      px-5
+      py-3
+      text-[rgb(var(--foreground))]
+      transition
+      hover:-translate-y-1
+      hover:border-blue-500
+      hover:text-blue-500
+      dark:border-white/20
+      "
+
+      >
+
+      <Download size={18}/>
+
+      Resume
+
+      </a>
+
+
+      </div>
+
+
+
+
+
+
+
+
+      {/* Skills */}
+
+      <div
+
+      className="
+      mt-10
+      flex
+      flex-wrap
+      justify-center
+      gap-3
+      lg:justify-end
+      "
+
+      >
+
+      {
+        skills.map((skill)=>(
+
+          <span
+
+          key={skill}
+
+          className="
+          rounded-full
+          border
+          border-blue-500/20
+          bg-blue-500/5
+          px-5
+          py-2
+          text-sm
+          text-[rgb(var(--muted))]
+          transition
+          hover:border-blue-500
+          hover:text-blue-500
           "
 
           >
 
-            {
-              skills.map((skill)=>(
+          {skill}
 
-                <span
+          </span>
 
-                key={skill}
-
-                className="
-                rounded-full
-                border
-                border-blue-500/20
-                bg-blue-500/5
-                px-5
-                py-2
-                text-sm
-                text-[rgb(var(--muted))]
-                transition
-
-                hover:border-blue-500
-                hover:text-blue-500
-                "
-
-                >
-
-                  {skill}
-
-                </span>
-
-              ))
-            }
+        ))
+      }
 
 
-          </div>
+      </div>
 
 
 
 
 
-
-        </motion.div>
-
+      </motion.div>
 
 
       </div>

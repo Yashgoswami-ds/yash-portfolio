@@ -174,18 +174,12 @@ text-[rgb(var(--foreground))]
 "
 
 >
-
-My
-
-<span
-
-className="
-text-blue-500
-"
-
->
- Journey
-</span>
+<>
+  My{" "}
+  <span className="text-blue-500">
+    Journey
+  </span>
+</>
 
 </h2>
 

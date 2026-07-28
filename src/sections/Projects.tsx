@@ -186,17 +186,12 @@ text-[rgb(var(--foreground))]
 "
 
 >
-
-Thingsnbsp 
-
-<span
-className="
-text-blue-500
-"
->
-  I Built 
-</span>
-
+<>
+  Things{" "}
+  <span className="text-blue-500">
+    I Built
+  </span>
+</>
 </h2>
 
 

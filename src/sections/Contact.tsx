@@ -529,22 +529,12 @@ shadow-[0_25px_60px_rgba(0,0,0,.25)]
 >
 
 
-<h3
-
-className="
-text-3xl
-font-bold
-
-text-[rgb(var(--foreground))]
-
-"
-
->
-
-Send Message
-
+<h3 className="text-3xl font-bold text-blue-500">
+  Send{" "}
+  <span className="text-[rgb(var(--foreground))]">
+    Message
+  </span>
 </h3>
-
 
 
 
@@ -554,7 +544,7 @@ Send Message
 className="
 mt-2
 
-text-[rgb(var(--muted))]
+ text-blue-500
 
 "
 
